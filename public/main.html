@@ -4,9 +4,31 @@
     <meta charset="utf-8">
     <title>Small Project</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="/client/main.js"></script>
+    
+    <script defer src="main.js"></script>
+
   </head>
   <body>
-      <h1>Hello world</h1>
+      <div>
+          <h1>Hello World</h1>
+          <form id="form">
+              <label for="fname">First Name:</label><br>
+              <input type="text" name="fname"><br>
+              <label for="lname">Last Name:</label><br>
+              <input type="text" name="lname"><br>
+
+              <input type="radio" name="male">
+              <label for="lname">Male</label><br>
+              <input type="radio" name="female">
+              <label for="lname">Female</label><br>
+              <input type="radio" name="non-binary">
+              <label for="lname">Non-Binary</label><br>
+              <input type="radio" name="pnts">
+              <label for="lname">Prefer Not To Say</label><br>
+
+              <input type="submit" value="Submit">
+
+          </form>
+      </div>
   </body>
 </html>

@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node server",
     "start-dev": "NODE_ENV='development' npm run start-server",
-    "start-server": "NODE_ENV='development' nodemon server -e html,js,scss --ignore public --ignore client",
+    "start-server": "nodemon server/server.js -e html,js,scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
