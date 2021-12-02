@@ -25,7 +25,7 @@ body {
 }
 
 #form > div {
-    width: 50%;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +38,35 @@ body {
     align-self: center;
 }
 
+@media screen and (min-width: 756px) {
+    #names-div {
+        display: flex;
+        flex-direction: row !important;
+    
+    } 
+}
+
+.text-input-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh .5vw;
+}
+
+.text-input-div > input {
+    width: 100%;
+    background-color: rgb(208, 235, 178);
+    border: none;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+
+.text-input-div > input:focus {
+    outline: none;
+    background-color: rgb(208, 235, 178);
+}
+
 #radio-div {
     display: flex;
     flex-direction: column;
@@ -46,27 +75,6 @@ body {
 
 #radio-div > div {
     justify-content: center;
-}
-
-.text-input-div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1vh 0;
-}
-
-.text-input-div > input {
-    width: 100%;
-    padding: 1vh 0;
-    background-color: rgb(208, 235, 178);
-    border: none;
-    border-bottom: 1px solid grey;
-}
-
-.text-input-div > input:focus {
-    outline: none;
-    background-color: rgb(208, 235, 178);
 }
 
 .form-data {
