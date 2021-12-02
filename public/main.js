@@ -1,42 +1,54 @@
 const formNode = document.querySelector('#form');
 
-function sendData(e){
+formNode.addEventListener('submit', (e) => {
+    //stops page refresh
     e.preventDefault();
-    const form = document.querySelector('#form');
-    const formData = new FormData(form);
-    
-}
 
-formNode.addEventListener('submit', sendData);
-
-formNode.addEventListener('formdata', (e) => {
-    const data = e.formData;
+    //extracts form data
+    const data = new FormData(formNode);
     const formattedData = {};
     for (var [key, value] of data.entries()) { 
         formattedData[key] = value;
       }
     
+    //create AJAX request, sets up listener
     const xhttp = new XMLHttpRequest();
-
     xhttp.onreadystatechange = function (){
         if(this.readyState == 4 && this.status == 200){
             const data = JSON.parse(this.responseText);
-            const body = document.querySelector('body');
-            let div = document.createElement('div');
-            for(let key in data){
-                let p = document.createElement('p');
-                p.innerText = `${key}: ${data[key]}`;
-                div.appendChild(p);
-                
+            let userDataDiv = document.querySelector('.form-data');
 
-            }
-            body.appendChild(div);
+            appendUserData(data, userDataDiv);
         }else {
             console.log('something went wrong');
         }
     }
 
+    //provides details to ajax request and sends data.
     xhttp.open('POST', '/elsewhere');
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(JSON.stringify(formattedData));
 })
+
+
+function appendUserData(data, userDataDiv){
+    //user has not yet submitted
+    if(userDataDiv == undefined){
+        let div = document.createElement('div');
+        div.classList.add('form-data');
+        for(let key in data){
+            let p = document.createElement('p');
+            p.innerText = `${key}: ${data[key]}`;
+            div.appendChild(p);
+        }
+        const body = document.querySelector('body');
+        body.appendChild(div);
+    }else { 
+        userDataDiv.innerHTML = '';
+        for(let key in data){
+            let p = document.createElement('p');
+            p.innerText = `${key}: ${data[key]}`;
+            userDataDiv.appendChild(p);
+        }
+    }
+}
