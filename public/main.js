@@ -35,14 +35,33 @@ function appendUserData(data, userDataDiv){
     //user has not yet submitted
     if(userDataDiv == undefined){
         let div = document.createElement('div');
-        div.classList.add('form-data');
+        div.classList.add('form-data', 'visuallyhidden');
+
         for(let key in data){
             let p = document.createElement('p');
             p.innerText = `${key}: ${data[key]}`;
             div.appendChild(p);
         }
-        const body = document.querySelector('body');
-        body.appendChild(div);
+        const mainDiv = document.querySelector('#main-div');
+
+        //visual transition
+        formNode.classList.add('visuallyhidden');    
+        formNode.addEventListener('transitionend', function(e) {
+            formNode.classList.add('hidden');
+
+            mainDiv.appendChild(div);
+
+            setTimeout(() => {
+                const dataForm = document.querySelector('.form-data')
+                dataForm.classList.remove('visuallyhidden')
+            }, 100);
+            
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+            });
+
     }else {
         //destroy p tags, re-add with new data 
         userDataDiv.innerHTML = '';

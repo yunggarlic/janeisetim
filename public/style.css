@@ -1,0 +1,74 @@
+body {
+    margin: 0 auto;
+    background-color: rgb(208, 235, 178);
+}
+#main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s linear;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visuallyhidden {
+    opacity: 0;
+}
+
+#form > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.2vh 0;
+}
+
+#form > button {
+    width: 50%;
+    margin: 2vw 0;
+    align-self: center;
+}
+
+#radio-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#radio-div > div {
+    justify-content: center;
+}
+
+.text-input-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 0;
+}
+
+.text-input-div > input {
+    width: 100%;
+    padding: 1vh 0;
+    background-color: rgb(208, 235, 178);
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.text-input-div > input:focus {
+    outline: none;
+    background-color: rgb(208, 235, 178);
+}
+
+.form-data {
+    transition: all 1s linear;
+}

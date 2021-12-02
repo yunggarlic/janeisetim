@@ -9,36 +9,43 @@
 
   </head>
   <body>
-      <div>
+      <div id="main-div">
           <h1>A Super Sick Form</h1>
+          <h2>Please enter the pertinent information</h2>
           <form id="form">
-            <div class='names-div'>
-                <label for="First Name">First Name:</label><br>
-                <input type="text" name="First Name" required><br>
-                <label for="Last Name" required>Last Name:</label><br>
-                <input type="text" name="Last Name"><br>
+            <div id='names-div'>
+                <div class='text-input-div'>
+                    <label for="First Name">First Name:</label><br>
+                    <input type="text" name="First Name" autocomplete="off" required><br>
+                </div>
+                <div class='text-input-div'>
+                    <label for="Last Name" required>Last Name:</label><br>
+                    <input type="text" name="Last Name" autocomplete="off" required><br>
+                </div>
             </div>
-            <div class="radio-div">
+            <div id="radio-div">
                 <p>Gender:</p>
                 <div>
-                    <input type="radio" name="Gender" value="Male">
-                    <label for="Gender">Male</label><br>
-                </div>
-                <div>
-                    <input type="radio" name="Gender" value="Female">
-                    <label for="Gender">Female</label><br>
-                </div>
-                <div>
-                    <input type="radio" name="Gender" value="Non-Binary">
-                    <label for="Gender">Non-Binary</label><br>
-                </div>
-                <div>
-                    <input type="radio" name="Gender" value="PNTS" required>
-                    <label for="Gender">Prefer Not To Say</label><br>
+                    <div class='radio-input-div'>
+                        <input type="radio" name="Gender" value="Male">
+                        <label for="Gender">Male</label><br>
+                    </div>
+                    <div class='radio-input-div'>
+                        <input type="radio" name="Gender" value="Female">
+                        <label for="Gender">Female</label><br>
+                    </div>
+                    <div class='radio-input-div'>
+                        <input type="radio" name="Gender" value="Non-Binary">
+                        <label for="Gender">Non-Binary</label><br>
+                    </div>
+                    <div class='radio-input-div'>
+                        <input type="radio" name="Gender" value="PNTS" required>
+                        <label for="Gender">Prefer Not To Say</label><br>
+                    </div>
                 </div>
             </div>
-            <div>
-                <label for="Super Power">Choose your preferred super power:</label>
+            <div id="select-div">
+                <label for="Super Power">Choose your preferred super power:</label><br>
                 <select name="Superpower" id="superpower" form="form">
                     <option value="Invisibility">Invisibility</option>
                     <option value="Super Strength">Super Strength</option>
