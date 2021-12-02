@@ -20,7 +20,7 @@ formNode.addEventListener('submit', (e) => {
 
             appendUserData(data, userDataDiv);
         }else {
-            console.log('something went wrong');
+            console.log('things are happening...');
         }
     }
 
@@ -55,7 +55,7 @@ function appendUserData(data, userDataDiv){
                 const dataForm = document.querySelector('.form-data')
                 dataForm.classList.remove('visuallyhidden')
             }, 100);
-            
+
         }, {
             capture: false,
             once: true,
