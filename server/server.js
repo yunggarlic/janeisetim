@@ -3,13 +3,17 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
-app.use(express.urlencoded({
-    extended: true
-  }))
+app.use(express.json());
 
 app.use('/elsewhere', (req,res,next) => {
-    console.log('triggered!');
-    console.log(req.body);
+    try{
+        console.log(req.body);
+        res.send(req.body);
+    }catch(error){
+        console.error(error);
+    }
+
+
 })
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
