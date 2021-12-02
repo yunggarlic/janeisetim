@@ -43,7 +43,8 @@ function appendUserData(data, userDataDiv){
         }
         const body = document.querySelector('body');
         body.appendChild(div);
-    }else { 
+    }else {
+        //destroy p tags, re-add with new data 
         userDataDiv.innerHTML = '';
         for(let key in data){
             let p = document.createElement('p');

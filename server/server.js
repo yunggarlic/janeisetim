@@ -5,15 +5,13 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
+//parses JSON string from ajax request and sends it right back.
 app.use('/elsewhere', (req,res,next) => {
     try{
-        console.log(req.body);
         res.send(req.body);
     }catch(error){
-        console.error(error);
+        next(error);
     }
-
-
 })
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
