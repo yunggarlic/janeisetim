@@ -10,23 +10,44 @@
   </head>
   <body>
       <div>
-          <h1>Hello World</h1>
+          <h1>A Super Sick Form</h1>
           <form id="form">
-              <label for="fname">First Name:</label><br>
-              <input type="text" name="fname"><br>
-              <label for="lname">Last Name:</label><br>
-              <input type="text" name="lname"><br>
+            <div class='names-div'>
+                <label for="First Name">First Name:</label><br>
+                <input type="text" name="First Name" required><br>
+                <label for="Last Name" required>Last Name:</label><br>
+                <input type="text" name="Last Name"><br>
+            </div>
+            <div class="radio-div">
+                <p>Gender:</p>
+                <div>
+                    <input type="radio" name="Gender" value="Male">
+                    <label for="Gender">Male</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="Gender" value="Female">
+                    <label for="Gender">Female</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="Gender" value="Non-Binary">
+                    <label for="Gender">Non-Binary</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="Gender" value="PNTS" required>
+                    <label for="Gender">Prefer Not To Say</label><br>
+                </div>
+            </div>
+            <div>
+                <label for="Super Power">Choose your preferred super power:</label>
+                <select name="Superpower" id="superpower" form="form">
+                    <option value="Invisibility">Invisibility</option>
+                    <option value="Super Strength">Super Strength</option>
+                    <option value="Flying">Flying</option>
+                    <option value="Turn into any sized bucket of water">Turn into any sized bucket of water</option>
+                </select>
+            </div>
 
-              <input type="radio" name="male">
-              <label for="lname">Male</label><br>
-              <input type="radio" name="female">
-              <label for="lname">Female</label><br>
-              <input type="radio" name="non-binary">
-              <label for="lname">Non-Binary</label><br>
-              <input type="radio" name="pnts">
-              <label for="lname">Prefer Not To Say</label><br>
-
-              <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
 
           </form>
       </div>
