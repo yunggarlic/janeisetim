@@ -1,15 +1,20 @@
 body {
     margin: 0 auto;
     background-color: rgb(208, 235, 178);
+    font-family: 'Coda', cursive;
+
 }
+
 #main-div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#main-div > h1, h2{
+h1, h2{
     text-align: center;
+    font-family: 'Bangers', cursive;
+    letter-spacing: .3vw;
 }
 
 #form {
@@ -32,12 +37,12 @@ body {
     width: 100%;
     max-width: 65vw;
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 1.2vh 0;
 }
 
 #form > button {
+    font-family: 'Coda', cursive;
     background-color: rgb(79, 119, 61);
     border: none;
     height: 100px;
@@ -48,11 +53,13 @@ body {
     font-size: 1.2rem;
 }
 
-@media screen and (min-width: 756px) {
+#names-div {
+    flex-direction: column;
+} 
+
+@media screen and (min-width: 881px) {
     #names-div {
-        display: flex;
-        flex-direction: row !important;
-    
+        flex-direction: row;
     } 
 }
 
@@ -89,7 +96,7 @@ body {
     justify-content: center;
 }
 
-@media screen and (max-width: 1074px) {
+@media screen and (max-width: 881px) {
     #radio-div > div {
         flex-direction: column;
     }
@@ -98,15 +105,23 @@ body {
 .radio-input-div {
     display: flex;
     margin: 0 1.2vw;
-
 }
 
-.form-data {
-    transition: all 1s linear;
+@media screen and (max-width: 881px) {
+    .radio-input-div {
+        display: flex;
+        margin: 1vw 0;
+    }
 }
+
+
 
 .select-selected {
     background-color: rgb(79, 119, 61);
+}
+
+#custom-select-div {
+    flex-direction: column;
 }
 
 #custom-select-div > * {
@@ -163,4 +178,59 @@ body {
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.post-submit-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s linear;
+}
+
+.form-data {
+    width: 80%;
+    background-color: rgba(255,255,255,.8);
+    padding: 2rem;
+}
+
+.form-data > p {
+    margin: 2rem 0;
+    border-bottom: 1px solid black;
+}
+
+.form-data-tuple {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    margin-top: 1rem;
+}
+
+
+.form-data-tuple > p:nth-child(1) {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    border-bottom: none;
+
+}
+
+.form-data-tuple > p:nth-child(2) {
+    font-size: 1.2rem;
+    
+
+}
+
+@media screen and (max-width: 756px){
+    .form-data-tuple {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid grey;
+        margin-top: 1rem;
+    }
+    .form-data-tuple > p:nth-child(1) {
+        border-bottom: 1px solid grey;
+ 
+    }
 }
