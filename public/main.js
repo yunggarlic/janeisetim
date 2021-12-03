@@ -28,7 +28,7 @@ function setupFormSubmit () {
 
                 appendUserData(data, userDataDiv);
             }else {
-                console.log('things are happening...');
+                console.log('things are happening... but also maybe not');
             }
         }
 
@@ -43,26 +43,56 @@ function setupFormSubmit () {
 function appendUserData(data, userDataDiv){
     //user has not yet submitted
     if(userDataDiv == undefined){
-        let div = document.createElement('div');
-        div.classList.add('form-data', 'visuallyhidden');
+
+        //Create postSubmitDiv with some text
+        let postSubmitDiv = document.createElement('div');
+        postSubmitDiv.classList.add('post-submit-div', 'visuallyhidden');
+
+        let thanks = document.createElement('h1');
+        thanks.innerHTML = 'Thank you!';
+        let thanksSubcopy = document.createElement('h2');
+        thanksSubcopy.innerHTML = 'This information will be most valuable to the shareholders.';
+
+        postSubmitDiv.appendChild(thanks);
+        postSubmitDiv.appendChild(thanksSubcopy);
+
+        //Create postSubmit Form Div and append provided information
+        let postSubmitFormDiv = document.createElement('div');
+        postSubmitFormDiv.classList.add('form-data');
 
         for(let key in data){
-            let p = document.createElement('p');
-            p.innerText = `${key}: ${data[key]}`;
-            div.appendChild(p);
-        }
-        const mainDiv = document.querySelector('#main-div');
+            let formDataDiv = document.createElement('div');
+            formDataDiv.classList.add('form-data-tuple');
+            let title = document.createElement('p');
+            let info = document.createElement('p');
+            title.innerText = `${key}: `;
+            info.innerText = `${data[key]}`;
 
-        //visual transition
-        formNode.classList.add('visuallyhidden');    
+            formDataDiv.appendChild(title);
+            formDataDiv.appendChild(info);
+
+            postSubmitFormDiv.appendChild(formDataDiv);
+        }
+
+        //Append form div to post submit div
+        postSubmitDiv.appendChild(postSubmitFormDiv);
+
+
+        //---VISUAL TRANSITION---
+        const mainDiv = document.querySelector('#main-div');
+        const formNode = document.querySelector('#form');
+
+        formNode.classList.add('visuallyhidden');
+
+        //after formNode disappears, append the postSubmit Div and transition to appear
         formNode.addEventListener('transitionend', function(e) {
             formNode.classList.add('hidden');
 
-            mainDiv.appendChild(div);
-
+            mainDiv.appendChild(postSubmitDiv);
+            
+            //Not totally sure why setTimeout needs to be here, but it does to activate transition.
             setTimeout(() => {
-                const dataForm = document.querySelector('.form-data')
-                dataForm.classList.remove('visuallyhidden')
+                postSubmitDiv.classList.remove('visuallyhidden');
             }, 100);
 
         }, {
@@ -71,7 +101,9 @@ function appendUserData(data, userDataDiv){
             passive: false
             });
 
-    }else {
+    }
+    //user has already submitted data ((DEPRECATED: form now advances))
+    else {
         //destroy p tags, re-add with new data 
         userDataDiv.innerHTML = '';
         for(let key in data){
