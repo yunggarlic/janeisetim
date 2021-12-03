@@ -8,6 +8,10 @@ body {
     align-items: center;
 }
 
+#main-div > h1, h2{
+    text-align: center;
+}
+
 #form {
     width: 50%;
     display: flex;
@@ -25,7 +29,8 @@ body {
 }
 
 #form > div {
-    width: 30vw;
+    width: 100%;
+    max-width: 65vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,9 +38,14 @@ body {
 }
 
 #form > button {
+    background-color: rgb(79, 119, 61);
+    border: none;
+    height: 100px;
     width: 50%;
     margin: 2vw 0;
     align-self: center;
+    color: white;
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 756px) {
@@ -74,7 +84,25 @@ body {
 }
 
 #radio-div > div {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+}
+
+@media screen and (max-width: 1074px) {
+    #radio-div > div {
+        flex-direction: column;
+    }
+}
+
+.radio-input-div {
+    display: flex;
+    margin: 0 1.2vw;
+
+}
+
+#select-div > * {
+    text-align: center;
 }
 
 .form-data {
