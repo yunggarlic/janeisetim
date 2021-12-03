@@ -101,10 +101,66 @@ body {
 
 }
 
-#select-div > * {
-    text-align: center;
-}
-
 .form-data {
     transition: all 1s linear;
+}
+
+.select-selected {
+    background-color: rgb(79, 119, 61);
+}
+
+#custom-select-div > * {
+    margin: 1rem 0;
+}
+
+.select-div {
+    position: relative;
+}
+
+.select-div > select {
+    display: none;
+}
+
+/* style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* flips arrow: */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items {
+  position: absolute;
+  background-color: rgb(79, 119, 61);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
