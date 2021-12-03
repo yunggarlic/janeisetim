@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Small Project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Coda&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script defer src="main.js"></script>
@@ -16,37 +19,37 @@
           <form id="form">
             <div id='names-div'>
                 <div class='text-input-div'>
-                    <label for="First Name">First Name:</label><br>
+                    <label for="First Name">First Name</label><br>
                     <input type="text" name="First Name" autocomplete="off" required><br>
                 </div>
                 <div class='text-input-div'>
-                    <label for="Last Name" required>Last Name:</label><br>
+                    <label for="Last Name" required>Last Name</label><br>
                     <input type="text" name="Last Name" autocomplete="off" required><br>
                 </div>
             </div>
             <div id="radio-div">
-                <p>Gender:</p>
+                <p>How do you define yourself?</p>
                 <div class='radio-input-list'>
                     <div class='radio-input-div'>
-                        <input type="radio" name="Gender" value="Male">
-                        <label for="Gender">Male</label><br>
+                        <input type="radio" name="Definition" value="Cool">
+                        <label for="Definition">Cool</label><br>
                     </div>
                     <div class='radio-input-div'>
-                        <input type="radio" name="Gender" value="Female">
-                        <label for="Gender">Female</label><br>
+                        <input type="radio" name="Definition" value="Rad">
+                        <label for="Definition">Rad</label><br>
                     </div>
                     <div class='radio-input-div'>
-                        <input type="radio" name="Gender" value="Non-Binary">
-                        <label for="Gender">Non-Binary</label><br>
+                        <input type="radio" name="Definition" value="Totally Dope">
+                        <label for="Definition">Totally Dope</label><br>
                     </div>
                     <div class='radio-input-div'>
-                        <input type="radio" name="Gender" value="PNTS" required>
-                        <label for="Gender">Prefer Not To Say</label><br>
+                        <input type="radio" name="Definition" value="Wicked" required>
+                        <label for="Definition">Wicked</label><br>
                     </div>
                 </div>
             </div>
             <div id='custom-select-div'>
-                <label for="Super Power">Choose your preferred super power:</label>
+                <label for="Super Power">What's your preferred super power?</label>
                 <div class="select-div" style="width:200px;">
                     <select name="Superpower" id="superpower" form="form">
                         <option value="Invisibility">Invisibility</option>
