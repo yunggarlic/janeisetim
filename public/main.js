@@ -1,7 +1,7 @@
 window.onload = function (){
     setupFormSubmit();
     customSelect();
-    document.addEventListener('click', closeAllSelect);
+    document.addEventListener('click', closeSelect);
 
 }
 
@@ -76,7 +76,6 @@ function appendUserData(data, userDataDiv){
 
         //Append form div to post submit div
         postSubmitDiv.appendChild(postSubmitFormDiv);
-
 
         //---VISUAL TRANSITION---
         const mainDiv = document.querySelector('#main-div');
@@ -158,13 +157,15 @@ function customSelect() {
     selectDiv.appendChild(optionListDiv);
     newSelectDiv.addEventListener('click', function(e){
         e.stopPropagation();
-        closeAllSelect(this);
+        closeSelect(this);
         this.nextSibling.classList.toggle('select-hide');
         this.classList.toggle("select-arrow-active");
     });
 }
 
-function closeAllSelect(element){
+function closeSelect(element){
+
+    //iterate through
     const selectItems = document.getElementsByClassName('select-items');
     const selectedItem = document.getElementsByClassName('select-selected');
     let array = [];

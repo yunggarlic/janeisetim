@@ -6,6 +6,7 @@ body {
 }
 
 #main-div {
+    margin-top: 3vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,6 +89,7 @@ h1, h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 #radio-div > div {
@@ -96,8 +98,13 @@ h1, h2{
     justify-content: center;
 }
 
+.radio-input-list {
+    display: flex;
+    flex-direction: row;
+}
+
 @media screen and (max-width: 881px) {
-    #radio-div > div {
+    #radio-div > div, .radio-input-list {
         flex-direction: column;
     }
 }
@@ -109,7 +116,6 @@ h1, h2{
 
 @media screen and (max-width: 881px) {
     .radio-input-div {
-        display: flex;
         margin: 1vw 0;
     }
 }
