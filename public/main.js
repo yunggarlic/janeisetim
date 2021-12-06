@@ -129,7 +129,7 @@ function customSelect() {
     optionListDiv.setAttribute('class', 'select-items select-hide');
 
     //for each existing option that isn't already selected, create a div to represent that option
-    for(let j = 1; j < selectElem.length; j++){
+    for(let j = 0; j < selectElem.length; j++){
         let optionItem = document.createElement('div');
         optionItem.innerHTML = selectElem.options[j].innerHTML;
         
